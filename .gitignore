@@ -1,2 +1,4 @@
 src
 .idea
+logs
+latent_diffusion.egg-info
