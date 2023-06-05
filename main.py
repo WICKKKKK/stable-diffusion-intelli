@@ -468,7 +468,7 @@ if __name__ == "__main__":
     parser = Trainer.add_argparse_args(parser)
 
     opt, unknown = parser.parse_known_args()
-    opt.base = ['configs/autoencoder/autoencoder_kl_64x64x3.yaml']
+    opt.base = ['configs/latent-diffusion/cin-ldm-vq-f8.yaml']    # 'configs/autoencoder/autoencoder_kl_64x64x3.yaml'
     opt.train = True
     opt.gpus = '0,'
 
@@ -590,6 +590,7 @@ if __name__ == "__main__":
             modelckpt_cfg =  OmegaConf.create()
         modelckpt_cfg = OmegaConf.merge(default_modelckpt_cfg, modelckpt_cfg)
         print(f"Merged modelckpt-cfg: \n{modelckpt_cfg}")
+        print(version.parse(pl.__version__))
         if version.parse(pl.__version__) < version.parse('1.4.0'):
             trainer_kwargs["checkpoint_callback"] = instantiate_from_config(modelckpt_cfg)
 

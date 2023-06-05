@@ -151,8 +151,9 @@ class ImageNetTrain(ImageNetBase):
         if self.data_root:
             self.root = os.path.join(self.data_root, self.NAME)
         else:
-            cachedir = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
-            self.root = os.path.join(cachedir, "autoencoders/data", self.NAME)
+            # cachedir = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
+            # self.root = os.path.join(cachedir, "autoencoders/data", self.NAME)
+            self.root = os.path.join("E:/MLData/datasets/imagenet/160px", self.NAME)
 
         self.datadir = os.path.join(self.root, "data")
         self.txt_filelist = os.path.join(self.root, "filelist.txt")
@@ -217,8 +218,9 @@ class ImageNetValidation(ImageNetBase):
         if self.data_root:
             self.root = os.path.join(self.data_root, self.NAME)
         else:
-            cachedir = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
-            self.root = os.path.join(cachedir, "autoencoders/data", self.NAME)
+            # cachedir = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
+            # self.root = os.path.join(cachedir, "autoencoders/data", self.NAME)
+            self.root = os.path.join("E:/MLData/datasets/imagenet/160px", self.NAME)
         self.datadir = os.path.join(self.root, "data")
         self.txt_filelist = os.path.join(self.root, "filelist.txt")
         self.expected_length = 50000
